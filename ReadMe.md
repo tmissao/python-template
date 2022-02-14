@@ -52,7 +52,17 @@ To execute the application, just run the following command:
 python -m demo
 ```
 
+## Linting
+---
+To Execute the lint, run the below commands:
+```bash
+flake8 .
+pylint **/*.py
+```
+
 ## References
 ---
 
 - [`Virtual Environments`](https://dev.to/codemouse92/dead-simple-python-virtual-environments-and-pip-5b56)
+
+- [`Project Structure`](https://dev.to/codemouse92/dead-simple-python-project-structure-and-imports-38c6)
