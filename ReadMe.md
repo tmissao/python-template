@@ -66,3 +66,11 @@ pylint **/*.py
 - [`Virtual Environments`](https://dev.to/codemouse92/dead-simple-python-virtual-environments-and-pip-5b56)
 
 - [`Project Structure`](https://dev.to/codemouse92/dead-simple-python-project-structure-and-imports-38c6)
+
+- [`VSCode Lint`](https://code.visualstudio.com/docs/python/linting)
+
+- [`Pylint`](https://pylint.org/)
+
+- [`Flake8`](https://flake8.pycqa.org/en/latest/)
+
+- [`Python Linters`](https://realpython.com/python-code-quality/)
