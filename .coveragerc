@@ -1,0 +1,18 @@
+[run]
+branch = True
+omit = **/tests/*
+
+[report]
+exclude_lines =
+    # Don't complain if non-runnable code isn't run:
+    if __name__ == .__main__.:
+
+    # Don't complain about abstract methods, they aren't run:
+    @(abc\.)?abstractmethod
+
+    # Ignore imports
+    from
+    import
+
+[xml]
+output = coverage.xml
