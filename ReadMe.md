@@ -110,9 +110,13 @@ pytest --cov=demo --cov-report xml:coverage.xml
 
 - [`PyTest-Mock Tutorial`](https://changhsinlee.com/pytest-mock/)
 
+- [`PyTest-Mock Tutorial 2`](https://myadventuresincoding.wordpress.com/2011/02/26/python-python-mock-cheat-sheet/)
+
+- [`PyTest-Mock Tutorial 3`](https://www.fugue.co/blog/2016-02-11-python-mocking-101)
+
 - [`MagicMock Tutorial`](https://aaronlelevier.github.io/python-unit-testing-with-magicmock/)
 
-- [`MagicMock Tutorial`](https://code.tutsplus.com/tutorials/introduction-to-mocking-in-python--cms-30370)
+- [`MagicMock Tutorial 2 `](https://code.tutsplus.com/tutorials/introduction-to-mocking-in-python--cms-30370)
 
 - [`PyTest-Mock Lib`](https://pypi.org/project/pytest-mock/)
 
