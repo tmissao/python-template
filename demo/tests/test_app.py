@@ -1,7 +1,7 @@
 # pylint: disable=redefined-outer-name
 import pytest
 from .. import app
-from ..common.fibonacci import Fibonacci
+from ..commons.fibonacci import Fibonacci
 
 
 @pytest.mark.app

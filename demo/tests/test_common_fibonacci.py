@@ -1,6 +1,6 @@
 # pylint: disable=redefined-outer-name
 import pytest
-from ..common.fibonacci import Fibonacci
+from ..commons.fibonacci import Fibonacci
 
 
 @pytest.fixture
