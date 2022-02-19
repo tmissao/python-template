@@ -19,8 +19,8 @@ RUN pip install --prefix=/install -r /requirements.txt
 
 FROM base
 COPY --from=builder /install /usr/local
-COPY demo /app/demo
+COPY app /app
 
 WORKDIR /app
 
-CMD ["python", "-m" , "demo"]
+CMD ["python", "-m" , "app"]

@@ -91,7 +91,11 @@ disable=raw-checker-failed,
         # missing-class-docstring
         C0115,
         # missing-function-docstring
-        C0116
+        C0116,
+        too-few-public-methods,
+        no-self-use,
+        too-many-arguments,
+        duplicate-code
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option
@@ -256,6 +260,8 @@ good-names=i,
            k,
            ex,
            Run,
+           e,
+           id,
            _
 
 # Good variable names regexes, separated by a comma. If names match any regex,
@@ -328,7 +334,7 @@ additional-builtins=
 allow-global-unused-variables=yes
 
 # List of names allowed to shadow builtins
-allowed-redefined-builtins=
+allowed-redefined-builtins=id
 
 # List of strings which can identify a callback function by name. A callback
 # name must start or end with one of those strings.

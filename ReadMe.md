@@ -121,3 +121,9 @@ pytest --cov=demo --cov-report xml:coverage.xml
 - [`PyTest-Mock Lib`](https://pypi.org/project/pytest-mock/)
 
 - [`SonarQube + Pytest`](https://iandrewchan.github.io/python/ci/2019/05/31/sonarqube-with-pytest.html)
+
+- [`Flask Tutorial`](https://auth0.com/blog/developing-restful-apis-with-python-and-flask/)
+
+- [`Flask Tutorial 2`](https://towardsdatascience.com/creating-restful-apis-using-flask-and-python-655bad51b24)
+
+- [`Flask Tutorial 3`](https://programminghistorian.org/en/lessons/creating-apis-with-python-and-flask)
