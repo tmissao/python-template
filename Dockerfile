@@ -1,14 +1,3 @@
-# FROM python:3.8-alpine
-
-# WORKDIR /app
-
-# COPY requirements.txt requirements.txt
-# RUN pip install --no-cache-dir -r requirements.txt
-
-# COPY . .
-
-# CMD [ "python", "-m" , "demo"]
-
 FROM python:3.8-alpine as base
 
 FROM base as builder
@@ -21,6 +10,6 @@ FROM base
 COPY --from=builder /install /usr/local
 COPY app /app
 
-WORKDIR /app
+WORKDIR /
 
 CMD ["python", "-m" , "app"]

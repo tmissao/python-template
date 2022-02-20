@@ -1,7 +1,6 @@
 flake8
 pylint
 pylint_flask
-pylint_flask_sqlalchemy
 pytest>=7.0.1
 pytest-cov
 pytest-mock

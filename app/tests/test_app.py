@@ -1,19 +1,19 @@
 # pylint: disable=redefined-outer-name
 import pytest
-from .. import start
+from .. import __main__
 from ..commons.fibonacci import Fibonacci
 
 
 @pytest.mark.app
 def test_run(mocker):
-    mock_get_fibonacci = mocker.patch('app.start.Fibonacci.get_fibonacci',
+    mock_get_fibonacci = mocker.patch('app.__main__.Fibonacci.get_fibonacci',
                                       return_value=21)
     mock_get_random_fibonacci = mocker.patch(
-        'app.start.Fibonacci.get_random_fibonacci')
+        'app.__main__.Fibonacci.get_random_fibonacci')
     mock_get_multiple_random_fibonacci = mocker.patch(
-        'app.start.Fibonacci.get_multiple_random_fibonacci')
+        'app.__main__.Fibonacci.get_multiple_random_fibonacci')
 
-    assert start.run() == 21
+    assert __main__.run() == 21
 
     mock_get_fibonacci.assert_called_once()
     mock_get_fibonacci.assert_called_with(8)
@@ -25,10 +25,10 @@ def test_run(mocker):
 
 @pytest.mark.app
 def test_run_another_way(mocker):
-    mock = mocker.patch('app.start.Fibonacci')
+    mock = mocker.patch('app.__main__.Fibonacci')
     mock().get_fibonacci.return_value = 21
 
-    assert start.run() == 21
+    assert __main__.run() == 21
 
     mock().get_fibonacci.assert_called_once()
     mock().get_fibonacci.assert_called_with(8)
@@ -48,7 +48,7 @@ def test_run_yet_another_way(mocker):
         Fibonacci, 'get_multiple_random_fibonacci'
     )
 
-    assert start.run() == 21
+    assert __main__.run() == 21
 
     mock_getfibonacci.assert_called_once()
     mock_getfibonacci.assert_called_with(8)

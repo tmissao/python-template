@@ -31,7 +31,6 @@ class PersonDomain:
                 random_id = random.randint(1, 1000)
             person.id = random_id
         self.database[person.id] = person
-        print(person)
         return person
 
     def replace(self, person) -> Person:
