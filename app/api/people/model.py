@@ -31,7 +31,7 @@ class Person:
                 self.first_name == other.first_name and
                 self.last_name == other.last_name and
                 self.age == other.age and
-                self.gender == other.age and
+                self.gender == other.gender and
                 self.occupation == other.occupation)
 
 

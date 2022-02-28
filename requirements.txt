@@ -4,6 +4,8 @@ pylint_flask
 pytest>=7.0.1
 pytest-cov
 pytest-mock
+pytest-flask
 mock
+freezegun
 Flask==2.0.3
 marshmallow==3.14

@@ -22,9 +22,10 @@ def start():
         blueprint, prefix = e.get_register_blueprint()
         app.register_blueprint(blueprint, url_prefix=prefix)
 
-    app.run(host="0.0.0.0", debug=True)
+    return app
 
 
 if __name__ == '__main__':
     # run()
-    start()
+    instance = start()
+    instance.run(host="0.0.0.0", debug=True)

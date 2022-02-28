@@ -49,7 +49,7 @@ pip install -r requirements.txt
 ---
 To execute the application, just run the following command:
 ```python
-python -m demo
+python -m app
 ```
 
 ## Linting
@@ -81,7 +81,7 @@ The coverage could be generated using this command:
 
 ```bash
 # pytest --cov=<package-to-be-analyzed> --cov-report xml:coverage.xml
-pytest --cov=demo --cov-report xml:coverage.xml
+pytest --cov=app --cov-report xml:coverage.xml
 ```
 
 

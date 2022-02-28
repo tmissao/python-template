@@ -1,17 +1,3 @@
-# from flask import Blueprint
-
-# NAMESPACE = 'health'
-# blueprint = Blueprint(NAMESPACE, __name__)
-
-
-# @blueprint.route('/')
-# def health():
-#     return 'up', 200
-
-
-# def get_blueprint():
-#     return {"blueprint": blueprint, "prefix": f'/{NAMESPACE}'}
-
 from typing import Tuple
 from flask import Blueprint, jsonify
 
@@ -27,7 +13,6 @@ class HealthAPI(BaseAPI):
     @staticmethod
     @blueprint.route('/')
     def health():
-        print(Health())
         return jsonify(HealthSchema().dump(Health()))
 
     @staticmethod

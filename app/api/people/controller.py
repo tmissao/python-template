@@ -16,7 +16,7 @@ class PersonAPI(BaseAPI):
     def get_person(person_id):
         try:
             person = PersonAPI.DOMAIN.get(person_id)
-            return jsonify(PersonSchema().dump(person))
+            return jsonify(PersonSchema().dump(person)), 200
         except ValueError as error:
             return abort(404, error)
 
@@ -24,7 +24,7 @@ class PersonAPI(BaseAPI):
     @blueprint.route('/list', methods=['GET'])
     def get_people():
         people = PersonAPI.DOMAIN.get_all()
-        return jsonify(PersonSchema(many=True).dump(people))
+        return jsonify(PersonSchema(many=True).dump(people)), 200
 
     @staticmethod
     @blueprint.route('/<int:person_id>', methods=['PUT'])
@@ -43,7 +43,6 @@ class PersonAPI(BaseAPI):
     def patch_person(person_id):
         patch = PersonPatchSchema().load(request.get_json())
         try:
-            PersonAPI.DOMAIN.update(person_id, **patch)
             person = PersonAPI.DOMAIN.update(person_id, **patch)
             return jsonify(PersonSchema().dump(person)), 200
         except ValueError as error:
@@ -65,7 +64,7 @@ class PersonAPI(BaseAPI):
     @blueprint.route('/<int:person_id>', methods=['DELETE'])
     def delete_person(person_id):
         try:
-            PersonAPI.DOMAIN.delete(person_id)
+            PersonAPI.DOMAIN.delete(person_id), 200
         except ValueError as error:
             return abort(404, error)
         return "", 204
