@@ -51,6 +51,51 @@ To execute the application, just run the following command:
 ```python
 python -m app
 ```
+`API Calls Examples`
+```bash
+# HealthCheck (/health/)
+curl --location --request GET 'http://localhost:5000/health'
+
+# Add Person (/people/)
+curl --location --request POST 'http://localhost:5000/people/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "id": 211,
+    "firstName": "Tiago",
+    "lastName": "Missão",
+    "age": 28,
+    "gender": "M"
+}'
+
+# Get Person (/people/<id>)
+curl --location --request GET 'http://localhost:5000/people/211'
+
+# Get People (/people/list)
+curl --location --request GET 'http://localhost:5000/people/list'
+
+# Update Person Specific Fields (/people/<id>)
+curl --location --request PATCH 'http://localhost:5000/people/211' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "firstName": "Tiago Emanuel",
+    "occupation": "Software Engineer"
+}'
+
+# Replace Person (/people/<id>)
+curl --location --request PUT 'http://localhost:5000/people/211' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "id": 211,
+    "firstName": "Tiago",
+    "lastName": "Missão",
+    "age": 28,
+    "gender": "M",
+    "occupation": "DevOps Engineer"
+}'
+
+# Delete Person (/people/<id>)
+curl --location --request DELETE 'http://127.0.0.1:5000/people/211'
+```
 
 ## Linting
 ---
@@ -83,7 +128,6 @@ The coverage could be generated using this command:
 # pytest --cov=<package-to-be-analyzed> --cov-report xml:coverage.xml
 pytest --cov=app --cov-report xml:coverage.xml
 ```
-
 
 ## References
 ---
