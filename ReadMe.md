@@ -42,6 +42,10 @@ deactivate
 All python dependencies are specified at the [requirements file](./requirements.txt), and it is possible to install them using `pip`
 
 ```bash
+# Development Dependencies
+pip install -r requirements-dev.txt
+
+# Production Dependencies
 pip install -r requirements.txt
 ```
 
