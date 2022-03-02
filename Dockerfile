@@ -13,4 +13,5 @@ COPY --from=build /usr/local/lib/python3.9/site-packages /usr/local/lib/python3.
 WORKDIR /
 ENV PYTHONPATH=/usr/local/lib/python3.9/site-packages
 EXPOSE 5000
+USER 6500
 CMD ["-m", "app"]
