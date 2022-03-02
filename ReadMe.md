@@ -11,11 +11,11 @@ sudo apt update
 sudo apt install software-properties-common
 sudo add-apt-repository ppa:deadsnakes/ppa -y
 sudo apt update
-sudo apt install python3.8 -y
-python3.8 --version
+sudo apt install python3.9 -y
+python3.9 --version
 
 # Installing Python Env and Pip
-sudo apt install python3.8-venv python3-pip -y
+sudo apt install python3.9-venv python3-pip -y
 ```
 
 ## Create Virtual Environment
@@ -24,7 +24,7 @@ sudo apt install python3.8-venv python3-pip -y
 This enables a project sandbox, containing only the packages really needed, and ignoring all the Python packages installed elsewhere on your system. Conventionally, the virtual environment is called `venv`.
 
 ```bash
-python3.8 -m venv venv
+python3.9 -m venv venv
 source venv/bin/activate
 ```
 
@@ -52,8 +52,13 @@ pip install -r requirements.txt
 ## Executing
 ---
 To execute the application, just run the following command:
-```python
+```bash
+# console
 python -m app
+
+# docker
+docker build -t python-template .
+docker container run -d -p 5000:5000 python-template
 ```
 `API Calls Examples`
 ```bash

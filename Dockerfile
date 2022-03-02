@@ -1,15 +1,16 @@
-FROM python:3.8-alpine as base
+FROM python:3.9-slim as build
 
-FROM base as builder
-RUN mkdir /install
-WORKDIR /install
-COPY requirements.txt /requirements.txt
-RUN pip install --prefix=/install -r /requirements.txt
+RUN mkdir /app
+WORKDIR /app
+COPY requirements.txt requirements.txt
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+COPY app .
 
-FROM base
-COPY --from=builder /install /usr/local
-COPY app /app
-
+FROM gcr.io/distroless/python3
+COPY --from=build /app /app
+COPY --from=build /usr/local/lib/python3.9/site-packages /usr/local/lib/python3.9/site-packages
 WORKDIR /
-
-CMD ["python", "-m" , "app"]
+ENV PYTHONPATH=/usr/local/lib/python3.9/site-packages
+EXPOSE 5000
+CMD ["-m", "app"]
