@@ -4,6 +4,7 @@ from .interfaces.api import BaseAPI
 from .api.health.controller import HealthAPI
 from .api.people.controller import PersonAPI
 from .commons.fibonacci import Fibonacci
+from .config.config import Config
 
 
 def run():
@@ -28,4 +29,5 @@ def start():
 if __name__ == '__main__':
     # run()
     instance = start()
-    instance.run(host="0.0.0.0", debug=True)
+    instance.run(host=Config.FLASK_HOST, debug=Config.FLASK_DEBUG,
+                 port=Config.FLASK_PORT)
