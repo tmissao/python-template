@@ -53,8 +53,11 @@ pip install -r requirements.txt
 ---
 To execute the application, just run the following command:
 ```bash
-# console
+# console (development mode)
 python -m app
+
+# gunicorn (production mode)
+gunicorn -c gunicorn.conf.py wsgy:app
 
 # docker
 docker build -t python-template .
